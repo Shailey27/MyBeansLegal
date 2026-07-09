@@ -25,7 +25,7 @@ MyBeans is a coffee bean tracking iOS app that helps users:
 
 ## Contact
 
-- **Email:** shailey@stefans-mini.myfiosgateway.com
+- **Email:** Urbanachieversllc@gmail.com
 - **App Repository:** [MyBeans (Private)](https://github.com/Shailey27/MyBeans)
 
 ---
