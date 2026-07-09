@@ -1,68 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyBeans Legal Pages</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f8f9fa;
-        }
-        .container {
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        h1 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-        }
-        .links {
-            margin: 30px 0;
-        }
-        .links a {
-            display: inline-block;
-            margin: 10px;
-            padding: 15px 30px;
-            background: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        .links a:hover {
-            background: #0056b3;
-        }
-        .app-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>Bean Book — Legal</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="app-icon">☕</div>
-        <h1>MyBeans Legal Pages</h1>
-        <p>Legal documentation for the MyBeans iOS app</p>
-        
-        <div class="links">
-            <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="terms-of-service.html">Terms of Service</a>
-        </div>
-        
-        <p><strong>App Store URLs:</strong></p>
-        <ul style="text-align: left; max-width: 400px; margin: 0 auto;">
-            <li>Privacy Policy: <code>privacy-policy.html</code></li>
-            <li>Terms of Service: <code>terms-of-service.html</code></li>
-        </ul>
-    </div>
+<div class="wrap">
+
+<header class="site">
+  <div class="brand">
+    <span class="kicker">Sensory Log</span>
+    <h1>Bean Book ☕</h1>
+  </div>
+  <p class="dates">Legal documentation for the Bean Book iOS app</p>
+</header>
+
+<p>Bean Book (previously published as MyBeans) is a private coffee journal for iOS — track your beans, tastings, and recipes, scan bag labels with your camera, and dial in your espresso with on-device AI. Your data stays on your device.</p>
+
+<a class="doc-link" href="privacy-policy.html">
+  <div class="card">
+    <span class="kicker">Document 01</span>
+    <h2>Privacy Policy</h2>
+    <p class="muted small">What stays on your device (everything), what we collect (nothing), on-device AI, purchases, and iCloud.</p>
+  </div>
+</a>
+
+<a class="doc-link" href="terms-of-service.html">
+  <div class="card">
+    <span class="kicker">Document 02</span>
+    <h2>Terms of Service</h2>
+    <p class="muted small">Using the App, Bean Book Pro subscriptions and lifetime unlock, the free trial, and AI feature disclaimers.</p>
+  </div>
+</a>
+
+<footer class="site">
+  <p><strong>App Store URLs</strong></p>
+  <p>Privacy Policy: <code>https://shailey27.github.io/MyBeansLegal/privacy-policy.html</code><br>
+  Terms of Service: <code>https://shailey27.github.io/MyBeansLegal/terms-of-service.html</code></p>
+  <p>© 2026 Stefan Hailey. All rights reserved.</p>
+</footer>
+
+</div>
 </body>
 </html>

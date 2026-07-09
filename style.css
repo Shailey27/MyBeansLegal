@@ -1,0 +1,160 @@
+/* Bean Book — lab design system (mirrors the iOS app palette) */
+:root {
+  --bg: #F5F0E0;
+  --surface: #FCF7EB;
+  --text: #1A1208;
+  --muted: #736657;
+  --copper: #B56626;
+  --hairline: rgba(0, 0, 0, 0.14);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #120F0A;
+    --surface: #211F1A;
+    --text: #F2EDE0;
+    --muted: #9E9485;
+    --copper: #DB8C45;
+    --hairline: rgba(255, 255, 255, 0.16);
+  }
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+}
+
+.kicker {
+  font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--copper);
+}
+
+header.site {
+  padding: 28px 0 20px;
+  border-bottom: 1px solid var(--hairline);
+  margin-bottom: 32px;
+}
+header.site .brand {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+header.site h1 {
+  font-family: ui-rounded, "SF Pro Rounded", -apple-system, system-ui, sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+header.site .dates {
+  margin-top: 10px;
+  font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  color: var(--muted);
+}
+header.site nav { margin-bottom: 14px; }
+header.site nav a {
+  font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  color: var(--muted);
+  text-decoration: none;
+}
+header.site nav a:hover { color: var(--copper); }
+
+h2 {
+  font-family: ui-rounded, "SF Pro Rounded", -apple-system, system-ui, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 40px 0 12px;
+}
+h2 .num {
+  color: var(--copper);
+  font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, monospace;
+  font-size: 15px;
+  font-weight: 600;
+  margin-right: 8px;
+}
+h3 {
+  font-family: ui-rounded, "SF Pro Rounded", -apple-system, system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 22px 0 8px;
+}
+
+p, ul, ol { margin-bottom: 12px; }
+ul, ol { padding-left: 22px; }
+li { margin-bottom: 6px; }
+
+a { color: var(--copper); }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  padding: 20px 22px;
+  margin: 20px 0;
+}
+.card .kicker { display: block; margin-bottom: 8px; }
+.card p:last-child, .card ul:last-child { margin-bottom: 0; }
+
+.muted { color: var(--muted); }
+.small { font-size: 14px; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  overflow: hidden;
+  font-size: 15px;
+}
+th, td {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--hairline);
+}
+th {
+  font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+}
+tr:last-child td { border-bottom: none; }
+
+footer.site {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--hairline);
+  font-size: 13px;
+  color: var(--muted);
+}
+footer.site a { color: var(--muted); }
+footer.site a:hover { color: var(--copper); }
+
+/* Index page cards */
+.doc-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.doc-link .card { transition: border-color 0.15s ease; }
+.doc-link:hover .card { border-color: var(--copper); }
+.doc-link h2 { margin: 0 0 6px; font-size: 20px; }
