@@ -11,8 +11,8 @@ This repository contains the legal documentation for the MyBeans iOS app.
 
 These pages are hosted on GitHub Pages and used for App Store submission:
 
-- **Privacy Policy:** https://shailey27.github.io/MyBeans-Legal/privacy-policy.html
-- **Terms of Service:** https://shailey27.github.io/MyBeans-Legal/terms-of-service.html
+- **Privacy Policy:** https://shailey27.github.io/MyBeansLegal/privacy-policy.html
+- **Terms of Service:** https://shailey27.github.io/MyBeansLegal/terms-of-service.html
 
 ## About MyBeans
 
