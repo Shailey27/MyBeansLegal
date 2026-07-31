@@ -187,10 +187,18 @@
       <div class="flavorbar-lbl"><span>Fruity</span><span>Floral</span><span>Sweet</span><span>Roasted</span></div>
     </div>
 
-    <a class="btn" href="https://apps.apple.com/us/app/bean-book/id6751822801">&#63743; Download on the App Store</a>
+    <a class="btn" id="dl-btn" href="https://apps.apple.com/us/app/bean-book/id6751822801">&#63743; Download on the App Store</a>
     <a class="btn ghost" href="https://www.instagram.com/beanbook.coffeejournal/">@beanbook.coffeejournal</a>
 
     <p class="foot">BB-0001 &middot; Logged with Bean Book</p>
   </main>
+
+  <script>
+    // Instagram's in-app browser won't open apps.apple.com links.
+    // On iPhone/iPad, use the itms-apps scheme to jump straight to the App Store app.
+    if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+      document.getElementById('dl-btn').href = 'itms-apps://apps.apple.com/us/app/bean-book/id6751822801';
+    }
+  </script>
 </body>
 </html>
