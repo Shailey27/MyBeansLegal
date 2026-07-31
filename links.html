@@ -35,6 +35,19 @@
 
   .screen { width: min(400px, 94vw); }
 
+  .ig-banner {
+    display: none;
+    background: var(--amber);
+    color: #1a1509;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.45;
+    margin-bottom: 16px;
+  }
+  .ig-banner .sub { font-weight: 400; font-size: 0.8rem; }
+
   .kicker {
     font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
     font-size: 0.62rem;
@@ -141,6 +154,10 @@
     background: var(--amber);
     color: #1a1509;
     transition: filter 0.15s ease;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    font-family: inherit;
   }
   .btn:hover { filter: brightness(1.1); }
 
@@ -164,6 +181,11 @@
 </head>
 <body>
   <main class="screen">
+    <div class="ig-banner" id="ig-banner">
+      Instagram blocks App Store links.
+      <div class="sub">Tap <strong>&#8943;</strong> at the top right &rarr; <strong>Open in external browser</strong>, then hit download.</div>
+    </div>
+
     <p class="kicker">Sensory Log</p>
     <h1>Bean Book</h1>
     <p class="subtitle">Track, rate, and discover your favorite coffee.</p>
@@ -194,11 +216,32 @@
   </main>
 
   <script>
-    // Instagram's in-app browser won't open apps.apple.com links.
-    // On iPhone/iPad, use the itms-apps scheme to jump straight to the App Store app.
-    if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-      document.getElementById('dl-btn').href = 'itms-apps://apps.apple.com/us/app/bean-book/id6751822801';
-    }
+    (function () {
+      var APP_HTTPS = 'https://apps.apple.com/us/app/bean-book/id6751822801';
+      var APP_ITMS  = 'itms-apps://apps.apple.com/us/app/bean-book/id6751822801';
+      var ua = navigator.userAgent || '';
+      var inApp = /Instagram|FBAN|FBAV/i.test(ua);
+      var isIOS = /iPhone|iPad|iPod/i.test(ua);
+      var btn = document.getElementById('dl-btn');
+
+      if (inApp) {
+        // Show escape instructions — in-app browsers block App Store navigation.
+        document.getElementById('ig-banner').style.display = 'block';
+      }
+
+      if (isIOS) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          // Attempt the App Store scheme on a real user gesture —
+          // works in Safari and some Instagram versions.
+          window.location.href = APP_ITMS;
+          // Fallback to the normal link if the scheme was blocked.
+          setTimeout(function () {
+            window.location.href = APP_HTTPS;
+          }, 1500);
+        });
+      }
+    })();
   </script>
 </body>
 </html>
