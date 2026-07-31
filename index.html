@@ -3,54 +3,202 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="light dark">
-<title>Bean Book — Legal</title>
-<link rel="stylesheet" href="style.css">
+<title>Bean Book — Coffee Log</title>
+<meta name="description" content="Bean Book — track, rate, and discover your favorite coffee. Free on the App Store.">
+<meta property="og:title" content="Bean Book — Coffee Log">
+<meta property="og:description" content="Log every bag. Track flavors, origins, and prices. Import straight from the roaster.">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #0f0e0c;
+    --card: #1b1916;
+    --card-edge: #2a2723;
+    --amber: #e6a23c;
+    --amber-dim: #a3762f;
+    --text: #efe9df;
+    --text-dim: #8d8578;
+    --pink: #d95bd1;
+    --violet: #8e5bd9;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px 14px;
+  }
+
+  .screen { width: min(400px, 94vw); }
+
+  .kicker {
+    font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 6px;
+  }
+
+  h1 {
+    font-size: 2.3rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+
+  .subtitle {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    margin-bottom: 22px;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .tile {
+    background: var(--card);
+    border: 1px solid var(--card-edge);
+    border-radius: 12px;
+    padding: 12px 10px;
+    text-align: center;
+  }
+  .tile .num {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .tile .lbl {
+    font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--amber-dim);
+    margin-top: 3px;
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--card-edge);
+    border-radius: 14px;
+    padding: 16px 16px 14px;
+    margin-bottom: 14px;
+    text-align: left;
+  }
+  .card .head {
+    font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 10px;
+  }
+  .card ul { list-style: none; }
+  .card li {
+    font-size: 0.88rem;
+    color: var(--text);
+    padding: 5px 0;
+    border-bottom: 1px solid #24211d;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .card li:last-child { border-bottom: none; }
+  .card li span { color: var(--text-dim); font-size: 0.8rem; white-space: nowrap; }
+
+  .flavorbar {
+    height: 6px;
+    border-radius: 3px;
+    margin: 12px 0 2px;
+    background: linear-gradient(90deg, var(--pink) 0%, var(--violet) 45%, var(--amber) 80%, var(--amber-dim) 100%);
+  }
+  .flavorbar-lbl {
+    display: flex;
+    justify-content: space-between;
+    font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+    font-size: 0.52rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  .btn {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 15px 18px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+    background: var(--amber);
+    color: #1a1509;
+    transition: filter 0.15s ease;
+  }
+  .btn:hover { filter: brightness(1.1); }
+
+  .btn.ghost {
+    background: transparent;
+    color: var(--amber);
+    border: 1.5px solid var(--amber);
+  }
+  .btn.ghost:hover { background: rgba(230,162,60,0.08); }
+
+  .foot {
+    text-align: center;
+    font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-top: 20px;
+  }
+</style>
 </head>
 <body>
-<div class="wrap">
+  <main class="screen">
+    <p class="kicker">Sensory Log</p>
+    <h1>Bean Book</h1>
+    <p class="subtitle">Track, rate, and discover your favorite coffee.</p>
 
-<header class="site">
-  <div class="brand">
-    <span class="kicker">Sensory Log</span>
-    <h1>Bean Book ☕</h1>
-  </div>
-  <p class="dates">Legal documentation for the Bean Book iOS app</p>
-</header>
+    <div class="stats">
+      <div class="tile"><div class="num">&#8734;</div><div class="lbl">Beans</div></div>
+      <div class="tile"><div class="num">0&ndash;100</div><div class="lbl">Ratings</div></div>
+      <div class="tile"><div class="num">300+</div><div class="lbl">Flavors</div></div>
+    </div>
 
-<p>Bean Book (previously published as MyBeans) is a private coffee journal for iOS — track your beans, tastings, and recipes, scan bag labels with your camera, and dial in your espresso with on-device AI. Your data stays on your device.</p>
+    <div class="card">
+      <p class="head">Origin Readout</p>
+      <ul>
+        <li>Import from roaster sites <span>auto-fill</span></li>
+        <li>Scan the bag <span>text recognition</span></li>
+        <li>SCA flavor wheel <span>AI-assisted</span></li>
+        <li>Dial-In Coach <span>brew recs</span></li>
+        <li>Analytics dashboard <span>charts + maps</span></li>
+      </ul>
+      <div class="flavorbar"></div>
+      <div class="flavorbar-lbl"><span>Fruity</span><span>Floral</span><span>Sweet</span><span>Roasted</span></div>
+    </div>
 
-<a class="doc-link" href="privacy-policy.html">
-  <div class="card">
-    <span class="kicker">Document 01</span>
-    <h2>Privacy Policy</h2>
-    <p class="muted small">What stays on your device (everything), what we collect (nothing), on-device AI, purchases, and iCloud.</p>
-  </div>
-</a>
+    <a class="btn" id="dl-btn" href="https://apps.apple.com/us/app/bean-book/id6751822801">&#63743; Download on the App Store</a>
+    <a class="btn ghost" href="https://www.instagram.com/beanbook.coffeejournal/">@beanbook.coffeejournal</a>
 
-<a class="doc-link" href="terms-of-service.html">
-  <div class="card">
-    <span class="kicker">Document 02</span>
-    <h2>Terms of Service</h2>
-    <p class="muted small">Using the App, Bean Book Pro subscriptions and lifetime unlock, the free trial, and AI feature disclaimers.</p>
-  </div>
-</a>
+    <p class="foot">BB-0001 &middot; Logged with Bean Book</p>
+  </main>
 
-<a class="doc-link" href="links.html">
-  <div class="card">
-    <span class="kicker">The App</span>
-    <h2>Get Bean Book</h2>
-    <p class="muted small">Download Bean Book on the App Store and follow @beanbook.coffeejournal on Instagram.</p>
-  </div>
-</a>
-
-<footer class="site">
-  <p><strong>App Store URLs</strong></p>
-  <p>Privacy Policy: <code>https://shailey27.github.io/MyBeansLegal/privacy-policy.html</code><br>
-  Terms of Service: <code>https://shailey27.github.io/MyBeansLegal/terms-of-service.html</code></p>
-  <p>© 2026 Stefan Hailey. All rights reserved.</p>
-</footer>
-
-</div>
+  <script>
+    // Instagram's in-app browser won't open apps.apple.com links.
+    // On iPhone/iPad, use the itms-apps scheme to jump straight to the App Store app.
+    if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+      document.getElementById('dl-btn').href = 'itms-apps://apps.apple.com/us/app/bean-book/id6751822801';
+    }
+  </script>
 </body>
 </html>
